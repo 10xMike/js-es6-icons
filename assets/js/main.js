@@ -105,7 +105,32 @@ const cards = [
 cards.forEach((card) =>{
     console.log(card.name, card.type);
     document.getElementById('container').insertAdjacentHTML('beforeend', `
+    <i class="${card.family} ${card.prefix}${card.name}" aria-hidden="true"></i>
     prova icona
-    <i class="${card.family}+${card.prefix}+${card.type}+${card.name}" aria-hidden="true"></i> 
 `)
 });
+console.log(cards);
+
+/* let colors = [];
+let colors = cards.map(function(element){
+    card.color
+    return `${card.type}${card.color}`
+})
+cards.map((element) =>{
+
+}) */
+
+function getTypes(elemento) {
+    for (let index = 0; index < cards.length; index++) {
+        const element = cards[index];
+        let types = [];
+        if ({type} != 0) {
+            types.push({type})
+        }
+        console.log(types);
+    }
+}
+
+
+
+
