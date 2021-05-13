@@ -1,8 +1,9 @@
 /* Milestone 1: Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout. */
-/* Milestone 2 Coloriamo le icone per tipo */
-/* Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
 
-[
+/* Milestone 2 Coloriamo le icone per tipo */
+
+/* Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
+const cards = [
 	{
 		name: 'cat',
 		prefix: 'fa-',
@@ -100,3 +101,11 @@
 		family: 'fas'
 	}
 ];
+
+cards.forEach((card) =>{
+    console.log(card.name, card.type);
+    document.getElementById('container').insertAdjacentHTML('beforeend', `
+    prova icona
+    <i class="fa fa-server" aria-hidden="true"></i>
+    `)
+});
