@@ -106,6 +106,6 @@ cards.forEach((card) =>{
     console.log(card.name, card.type);
     document.getElementById('container').insertAdjacentHTML('beforeend', `
     prova icona
-    <i class="fa fa-server" aria-hidden="true"></i>
-    `)
+    <i class="${card.family}+${card.prefix}+${card.type}+${card.name}" aria-hidden="true"></i> 
+`)
 });
