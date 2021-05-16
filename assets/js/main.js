@@ -1,8 +1,5 @@
 /* Milestone 1: Partendo dalla seguente struttura dati , mostriamo in pagina tutte le icone disponibili come da layout. */
 
-/* Milestone 2 Coloriamo le icone per tipo */
-
-/* Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
 const cards = [
 	{
 		name: 'cat',
@@ -102,34 +99,32 @@ const cards = [
 	}
 ];
 
-cards.forEach((card) =>{
-    console.log(card.name, card.type);
-    document.getElementById('container').insertAdjacentHTML('beforeend', `
-    <i class="${card.family} ${card.prefix}${card.name}" aria-hidden="true"></i>
-    prova icona
-`)
-});
 console.log(cards);
 
-/* let colors = [];
-let colors = cards.map(function(element){
-    card.color
-    return `${card.type}${card.color}`
-})
-cards.map((element) =>{
+/* Milestone 2 Coloriamo le icone per tipo */
 
-}) */
+let getTypes = cards.map(a => a.type);
+console.log(getTypes);
 
-function getTypes(elemento) {
-    for (let index = 0; index < cards.length; index++) {
-        const element = cards[index];
-        let types = [];
-        if ({type} != 0) {
-            types.push({type})
-        }
-        console.log(types);
-    }
-}
+cards.forEach((card) =>{
+	if (card.type === 'animal') {
+		card.colorType = 'blue'
+	} else if (card.type === 'vegetable') {
+		card.colorType = 'orange'
+	} else if (card.type === 'user') {
+		card.colorType = 'purple'
+	}
+});
+
+cards.forEach((card) =>{
+	console.log(card.name, card.type);
+	document.getElementById('container').insertAdjacentHTML('beforeend', `
+	<i class="${card.family} ${card.prefix}${card.name}" style="color: ${card.colorType}"></i>
+	<span>${card.name}</span>
+	`)
+});
+
+/* Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
 
 
 
