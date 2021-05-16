@@ -126,6 +126,21 @@ cards.forEach((card) =>{
 
 /* Milestone 3 Creiamo una select con i tipi di icone e usiamola per filtrare le icone */
 
+const selectIcon = document.getElementById('type');
+selectIcon.addEventListener('change', () =>{
+	document.querySelector('.cards').innerHTML = '';
+	cards.forEach(card =>{
+		if (selectIcon.value === card.type) {
+			document.querySelector('.cards').insertAdjacentHTML('beforeend', 
+			`
+			<div class="card">
+				<i class="${card.family} ${card.prefix}${card.name}" style="color: ${card.colorType}"></i>
+				<span>${card.name}</span>
+			</div>
+			`)
+		}
+	});
+});
 
 
 
